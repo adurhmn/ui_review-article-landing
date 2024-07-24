@@ -2,32 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .h1 {
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 150%;
+  }
+  .h2 {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 120%;
+  }
+  .h3 {
+    font-weight: 600;
+    font-size: 28px;
+  }
+  .h4 {
+    font-weight: 700;
+    font-size: 24px;
+  }
+  .h4-bold {
+    font-weight: 600;
+    font-size: 24px;
+  }
+  .h5 {
+    font-size: 20px;
+    font-weight: 300;
+  }
+  .h6 {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 150%;
+  }
+  .h6-bold {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 150%;
+  }
+  .h7 {
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 120%;
   }
 }

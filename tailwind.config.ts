@@ -39,51 +39,51 @@ const config: Config = {
     },
   },
   plugins: [
-    plugin(function ({ addBase, addComponents, addUtilities, theme }) {
-      addBase({
-        h1: {
-          fontWeight: "900",
-          fontSize: "48px",
-          lineHeight: "150%",
-        },
-        h2: {
-          fontWeight: "700",
-          fontSize: "32px",
-          lineHeight: "120%",
-        },
-        h3: {
-          fontWeight: "600",
-          fontSize: "28px",
-        },
-        h4: {
-          fontWeight: "700",
-          fontSize: "24px",
-        },
-        "h4-bold": {
-          fontWeight: "600",
-          fontSize: "24px",
-        },
-        h5: {
-          fontSize: "20px",
-          fontWeight: "300",
-        },
-        h6: {
-          fontSize: "16px",
-          fontWeight: "300",
-          lineHeight: "150%",
-        },
-        "h6-bold": {
-          fontSize: "16px",
-          fontWeight: "500",
-          lineHeight: "150%",
-        },
-        h7: {
-          fontSize: "12px",
-          fontWeight: "300",
-          lineHeight: "120%",
-        },
-      });
-    }),
+    // plugin(function ({ addBase, addComponents, addUtilities, theme }) {
+    //   addBase({
+    //     // h1: {
+    //     //   fontWeight: "900",
+    //     //   fontSize: "48px",
+    //     //   lineHeight: "150%",
+    //     // },
+    //     // h2: {
+    //     //   fontWeight: "700",
+    //     //   fontSize: "32px",
+    //     //   lineHeight: "120%",
+    //     // },
+    //     // h3: {
+    //     //   fontWeight: "600",
+    //     //   fontSize: "28px",
+    //     // },
+    //     // h4: {
+    //     //   fontWeight: "700",
+    //     //   fontSize: "24px",
+    //     // },
+    //     // "h4-bold": {
+    //     //   fontWeight: "600",
+    //     //   fontSize: "24px",
+    //     // },
+    //     // h5: {
+    //     //   fontSize: "20px",
+    //     //   fontWeight: "300",
+    //     // },
+    //     // h6: {
+    //     //   fontSize: "16px",
+    //     //   fontWeight: "300",
+    //     //   lineHeight: "150%",
+    //     // },
+    //     // "h6-bold": {
+    //     //   fontSize: "16px",
+    //     //   fontWeight: "500",
+    //     //   lineHeight: "150%",
+    //     // },
+    //     // h7: {
+    //     //   fontSize: "12px",
+    //     //   fontWeight: "300",
+    //     //   lineHeight: "120%",
+    //     // },
+    //   });
+    // }),
   ],
 };
 export default config;
