@@ -7,6 +7,7 @@ import HeroDoor from "@/app/_assets/imgs/hero-door";
 import HeroMan from "@/app/_assets/imgs/hero-man";
 import HeroInfo1 from "@/app/_assets/imgs/hero-info-1";
 import HeroInfo2 from "@/app/_assets/imgs/hero-info-2";
+import { Button } from "../ui/button";
 
 const IntroSlide = () => {
   return (
@@ -44,15 +45,10 @@ const IntroSlide = () => {
           </div>
         </div>
         <div className="flex gap-2 my-10 h6-bold">
-          <button className="px-10 py-4 rounded-full bg-void-gradient text-white">
-            Read Now
-          </button>
-          <button className="px-8 py-4 rounded-full hover:bg-slate-200 transition-all flex gap-2">
+          <Button>Read Now</Button>
+          <Button variant={"ghost"} rightIcon={<ArrowRight className="size-5"/>}>
             Sign up
-            <span>
-              <ArrowRight />
-            </span>
-          </button>
+          </Button>
         </div>
       </section>
       <section className="w-[600px] relative h-full">

@@ -1,14 +1,13 @@
 "use client";
 import { useState } from "react";
-import Tabs from "../ui/tabs/tabs";
+import { Tabs } from "../ui/tabs";
 import { ITabOption } from "../ui/tabs";
 import Home from "./home";
-
 
 export default function Hero() {
   const [tabs] = useState<ITabOption[]>([
     {
-      component: <Home/>,
+      component: <Home />,
       label: "Home",
     },
     { component: <h1>Bestseller</h1>, label: "Bestseller" },

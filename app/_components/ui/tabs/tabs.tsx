@@ -6,6 +6,7 @@ import { roboto } from "@/app/_assets/fonts";
 import { useEffect, useMemo, useState } from "react";
 import { useInitTabsStore } from "./store";
 import { StoreApi, UseBoundStore } from "zustand";
+import * as TabsPrimitive from "@radix-ui/react-tabs";
 
 const TabLabel = ({
   tab,
@@ -16,11 +17,17 @@ const TabLabel = ({
 }) => {
   const { activeTab, setActiveTab } = useTabsStore();
 
-  // background movement animation
+  // TODO: background movement animation
   return (
-    <li
+    <div
       key={tab.label}
-      className={cn("p-5 px-8 cursor-pointer", roboto.className)}
+      className={cn(
+        "p-5 px-8 cursor-pointer border-b-[2px] border-transparent",
+        roboto.className,
+        {
+          "border-b-x-green": activeTab === tab.label
+        }
+      )}
       onClick={() => setActiveTab(tab.label)}
     >
       <p
@@ -30,34 +37,37 @@ const TabLabel = ({
       >
         {tab.label}
       </p>
-    </li>
+    </div>
   );
 };
 
 export default function Tabs({ tabs, activeTabLabel, onNavigate }: ITabsProps) {
-  console.log({ tabs });
   const useTabsStore = useInitTabsStore({
     activeTab: activeTabLabel || tabs[0].label,
   });
-  const { activeTab, setActiveTab } = useTabsStore();
-
-  console.log({ activeTab, setActiveTab });
-
-  const content = useMemo(
-    () => tabs.filter((t) => t.label === activeTab)[0].component,
-    [tabs, activeTab]
-  );
+  const { activeTab } = useTabsStore();
 
   return (
-    <div className="flex flex-col items-center gap-4">
-      <nav>
-        <ul className="flex">
-          {tabs.map((tab) => (
+    <TabsPrimitive.Root
+      className="flex flex-col items-center gap-4"
+      defaultValue={activeTab}
+    >
+      <TabsPrimitive.List className="flex">
+        {tabs.map((tab) => (
+          <TabsPrimitive.Trigger value={tab.label} key={tab.label}>
             <TabLabel tab={tab} key={tab.label} useTabsStore={useTabsStore} />
-          ))}
-        </ul>
-      </nav>
-      <div className="w-full">{content}</div>
-    </div>
+          </TabsPrimitive.Trigger>
+        ))}
+      </TabsPrimitive.List>
+      {tabs.map((tab) => (
+        <TabsPrimitive.Content
+          value={tab.label}
+          key={tab.label}
+          className="w-full"
+        >
+          {tab.component}
+        </TabsPrimitive.Content>
+      ))}
+    </TabsPrimitive.Root>
   );
 }
