@@ -5,7 +5,7 @@ import cn from "@/app/_utils/cn";
 
 export default function NavBar() {
   return (
-    <div className="flex items-center justify-between pt-10 px-8 max-w-[1200px] w-full mx-auto">
+    <section className="flex items-center justify-between pt-10 px-8 max-w-[1200px] w-full mx-auto">
       <LogoHero />
       <div className="relative w-[45%] min-w-[150px]">
         <input
@@ -30,7 +30,7 @@ export default function NavBar() {
           J
         </button>
       </div>
-    </div>
+    </section>
   );
 }
 

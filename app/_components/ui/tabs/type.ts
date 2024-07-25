@@ -9,6 +9,7 @@ export interface ITabsProps {
   tabs: ITabOption[];
   activeTabLabel?: string;
   onNavigate?: (label: string) => any;
+  contentBoxClass?: string;
 }
 
 export interface ITabsState {

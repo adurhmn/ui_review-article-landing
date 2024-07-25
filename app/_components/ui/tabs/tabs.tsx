@@ -25,7 +25,7 @@ const TabLabel = ({
         "p-5 px-8 cursor-pointer border-b-[2px] border-transparent",
         roboto.className,
         {
-          "border-b-x-green": activeTab === tab.label
+          "border-b-x-green": activeTab === tab.label,
         }
       )}
       onClick={() => setActiveTab(tab.label)}
@@ -41,7 +41,12 @@ const TabLabel = ({
   );
 };
 
-export default function Tabs({ tabs, activeTabLabel, onNavigate }: ITabsProps) {
+export default function Tabs({
+  tabs,
+  activeTabLabel,
+  onNavigate,
+  contentBoxClass,
+}: ITabsProps) {
   const useTabsStore = useInitTabsStore({
     activeTab: activeTabLabel || tabs[0].label,
   });
@@ -63,7 +68,7 @@ export default function Tabs({ tabs, activeTabLabel, onNavigate }: ITabsProps) {
         <TabsPrimitive.Content
           value={tab.label}
           key={tab.label}
-          className="w-full"
+          className={cn("w-full", contentBoxClass)}
         >
           {tab.component}
         </TabsPrimitive.Content>

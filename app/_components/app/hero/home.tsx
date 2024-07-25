@@ -1,13 +1,13 @@
 import cn from "@/app/_utils/cn";
-import { Slider } from "../ui/slider";
+import { Slider } from "../../ui/slider";
 import { roboto } from "@/app/_assets/fonts";
 import { ArrowRight } from "@/app/_assets/icons";
-import HeroDotsPattern from "@/app/_assets/imgs/hero-dots-pattern";
-import HeroDoor from "@/app/_assets/imgs/hero-door";
-import HeroMan from "@/app/_assets/imgs/hero-man";
-import HeroInfo1 from "@/app/_assets/imgs/hero-info-1";
-import HeroInfo2 from "@/app/_assets/imgs/hero-info-2";
-import { Button } from "../ui/button";
+import HeroDotsPattern from "@/app/_assets/imgs/hero/dots-pattern";
+import HeroDoor from "@/app/_assets/imgs/hero/door";
+import HeroMan from "@/app/_assets/imgs/hero/man";
+import HeroInfo1 from "@/app/_assets/imgs/hero/info-1";
+import HeroInfo2 from "@/app/_assets/imgs/hero/info-2";
+import { Button } from "../../ui/button";
 
 const IntroSlide = () => {
   return (
@@ -46,7 +46,10 @@ const IntroSlide = () => {
         </div>
         <div className="flex gap-2 my-10 h6-bold">
           <Button>Read Now</Button>
-          <Button variant={"ghost"} rightIcon={<ArrowRight className="size-5"/>}>
+          <Button
+            variant={"ghost"}
+            rightIcon={<ArrowRight className="size-5" />}
+          >
             Sign up
           </Button>
         </div>
@@ -65,7 +68,7 @@ const IntroSlide = () => {
 export default function Home() {
   return (
     <Slider
-      contentBox={{ height: 481 }}
+      contentBoxClass={"h-[481px]"}
       slides={[
         { key: "SLider1", component: <IntroSlide /> },
         {

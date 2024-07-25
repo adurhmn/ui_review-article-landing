@@ -10,7 +10,7 @@ export default function Slider({
   slides,
   activeSlide: activeSlideDefault,
   onNavigate,
-  contentBox,
+  contentBoxClass,
 }: ISliderProps) {
   const [activeSlide, setActiveSlide] = useState(
     activeSlideDefault || slides[0].key
@@ -23,16 +23,7 @@ export default function Slider({
   return (
     <div className="flex flex-col gap-3 items-center">
       {/* should have fixed height (typically max height) */}
-      <div
-        className={cn(
-          "w-full",
-          typeof contentBox?.height === "number" &&
-            `h-[${contentBox.height}px]`,
-          typeof contentBox?.width === "number" && `h-[${contentBox.width}px]`
-        )}
-      >
-        {component}
-      </div>
+      <div className={cn("w-full", contentBoxClass)}>{component}</div>
       <div className="flex gap-2">
         {slides.map(({ key }) => (
           <span

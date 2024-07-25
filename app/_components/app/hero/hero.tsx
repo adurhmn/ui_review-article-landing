@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
-import { Tabs } from "../ui/tabs";
-import { ITabOption } from "../ui/tabs";
+import { Tabs } from "../../ui/tabs";
+import { ITabOption } from "../../ui/tabs";
 import Home from "./home";
 
 export default function Hero() {
@@ -17,8 +17,13 @@ export default function Hero() {
   ]);
 
   return (
-    <div className="mt-5 mx-auto w-full max-w-[1200px]">
-      <Tabs tabs={tabs} activeTabLabel="Home" onNavigate={console.log} />
-    </div>
+    <section className="mt-5 mx-auto w-full max-w-[1200px]">
+      <Tabs
+        tabs={tabs}
+        activeTabLabel="Home"
+        onNavigate={console.log}
+        contentBoxClass={"h-[500px]"}
+      />
+    </section>
   );
 }

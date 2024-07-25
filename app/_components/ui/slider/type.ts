@@ -8,5 +8,5 @@ export interface ISliderProps {
   slides: ISlide[];
   activeSlide?: string;
   onNavigate?: (slideKey: string) => void;
-  contentBox?: { width?: number; height?: number };
+  contentBoxClass?: string
 }
